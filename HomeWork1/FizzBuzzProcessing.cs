@@ -18,7 +18,7 @@ namespace HomeWork1
 
             while (true)
             {
-                Console.WriteLine("---------------------");
+                Console.WriteLine("-----------------------");
                 Console.Write("Enter min number:  ");
                 readValue = Console.ReadLine();
                 if (readValue == "q" || readValue == "Q")
