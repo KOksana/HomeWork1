@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace HomeWork1
+namespace HomeWork1.FbImplementation
 {
     class FizzBuzzProcessing
     {      
@@ -22,7 +22,8 @@ namespace HomeWork1
                 var secondDivisor = GetSecondDivisor();
                 if (secondDivisor == int.MinValue) break;
 
-                FizzBuzz.PrintResult(minNumber, maxNumber, firstDivisor, secondDivisor);
+                FizzBuzz.PrintAndReturnResult(minNumber, maxNumber, firstDivisor, secondDivisor);
+
                 Console.WriteLine("-----------------------");
                 Console.WriteLine("The end and start again.");
                 Console.WriteLine("-----------------------");
