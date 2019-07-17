@@ -4,21 +4,21 @@ namespace HomeWork1
 {
     public class FizzBuzz
     {
-        public static void PrintResult(int min, int max, int divisor1, int divisor2)
+        public static void PrintResult(int min, int max, int divisorFirst, int divisorSecond)
         {
-            int lcm = CulcLcm(divisor1, divisor2);
+            int leastCommonMultiple = CulculateLeastCommonMultiple(divisorFirst, divisorSecond);
 
             for (int i = min; i <= max; i++)
             {
-                if (i % lcm == 0)
+                if (i % leastCommonMultiple == 0)
                 {
                     Console.WriteLine("FizzBuzz");
                 }
-                else if (i % divisor1 == 0)
+                else if (i % divisorFirst == 0)
                 {
                     Console.WriteLine("Fizz");
                 }
-                else if (i % divisor2 == 0)
+                else if (i % divisorSecond == 0)
                 {
                     Console.WriteLine("Buzz");
                 }
@@ -29,18 +29,16 @@ namespace HomeWork1
             }
         }
 
-        static int CulcLcm(int a, int b)
+        static int CulculateLeastCommonMultiple(int a, int b)
         {
-            return a / CulcGcd(a, b) * b;
+            return a / CulculateGreatestCommonDivisor(a, b) * b;
         }
 
-        static int CulcGcd(int a, int b)
+        static int CulculateGreatestCommonDivisor(int a, int b)
         {
             if (b == 0)
-            {
                 return a;
-            }
-            return CulcGcd(b, a % b);
+            return CulculateGreatestCommonDivisor(b, a % b);
         }
     }
 }

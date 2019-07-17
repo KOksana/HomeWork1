@@ -8,8 +8,8 @@ namespace HomeWork1
         {
             int min;
             int max;
-            int divisor1;
-            int divisor2;
+            int divisorFirst;
+            int divisorSecond;
 
             string readValue;
             bool isParsed = false;
@@ -21,10 +21,8 @@ namespace HomeWork1
                 Console.WriteLine("-----------------------");
                 Console.Write("Enter min number:  ");
                 readValue = Console.ReadLine();
-                if (readValue == "q" || readValue == "Q")
-                {
+                if (readValue.Equals("q", StringComparison.OrdinalIgnoreCase))
                     break;
-                }
                 isParsed = int.TryParse(readValue, out min);
                 if (!isParsed)
                 {
@@ -34,10 +32,8 @@ namespace HomeWork1
 
                 Console.Write("Enter max number:  ");
                 readValue = Console.ReadLine();
-                if (readValue == "q" || readValue == "Q")
-                {
+                if (readValue.Equals("q", StringComparison.OrdinalIgnoreCase))
                     break;
-                }
                 isParsed = int.TryParse(readValue, out max);
                 if (!isParsed)
                 {
@@ -45,33 +41,29 @@ namespace HomeWork1
                     continue;
                 }
 
-                Console.Write("Enter divisor1 number: ");
+                Console.Write("Enter first divisor: ");
                 readValue = Console.ReadLine();
-                if (readValue == "q" || readValue == "Q")
-                {
+                if (readValue.Equals("q", StringComparison.OrdinalIgnoreCase))
                     break;
-                }
-                isParsed = int.TryParse(readValue, out divisor1);
+                isParsed = int.TryParse(readValue, out divisorFirst);
                 if (!isParsed)
                 {
                     Console.WriteLine("You entered invalid number.");
                     continue;
                 }
 
-                Console.Write("Enter divisor2 number:  ");
+                Console.Write("Enter second divisor:  ");
                 readValue = Console.ReadLine();
-                if (readValue == "q" || readValue == "Q")
-                {
+                if (readValue.Equals("q", StringComparison.OrdinalIgnoreCase))
                     break;
-                }
-                isParsed = int.TryParse(readValue, out divisor2);
+                isParsed = int.TryParse(readValue, out divisorSecond);
                 if (!isParsed)
                 {
                     Console.WriteLine("You entered invalid number.");
                     continue;
                 }
                                                                           
-                FizzBuzz.PrintResult(min, max, divisor1, divisor2);
+                FizzBuzz.PrintResult(min, max, divisorFirst, divisorSecond);
             }
         }
     }
