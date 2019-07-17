@@ -10,23 +10,32 @@ namespace HomeWork1.FbImplementation
             string result = null;
             for (var i = min; i <= max; i++)
                 if (i % leastCommonMultiple == 0)
+                {
                     result = "FizzBuzz";
+                    Console.WriteLine(result);
+                }
                 else if (i % divisorFirst == 0)
+                {
                     result = "Fizz";
+                    Console.WriteLine(result);
+                }
                 else if (i % divisorSecond == 0)
-                    result ="Buzz";
+                {
+                    result = "Buzz";
+                    Console.WriteLine(result);
+                }
                 else
                 {
                     Console.WriteLine(i);
-                    result = $"No Least Common Multiple for combination: {min}, {max}, {divisorFirst}, {divisorSecond}."; 
+                    result = $"No Least Common Multiple for combination: {min}, {max}, {divisorFirst}, {divisorSecond}.";
                 }
             return result;
         }
 
-        static int CalculateLeastCommonMultiple(int a, int b) 
+        static int CalculateLeastCommonMultiple(int a, int b)
             => a / CalculateGreatestCommonDivisor(a, b) * b;
 
-        static int CalculateGreatestCommonDivisor(int a, int b) 
+        static int CalculateGreatestCommonDivisor(int a, int b)
             => b == 0 ? a : CalculateGreatestCommonDivisor(b, a % b);
     }
 }

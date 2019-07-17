@@ -12,15 +12,19 @@ namespace HomeWork1.FbImplementation
 
                 var minNumber = GetMinNumber();
                 if (minNumber == int.MinValue) break;
+                if (minNumber == int.MaxValue) continue;
 
                 var maxNumber = GetMaxNumber();
                 if (maxNumber == int.MinValue) break;
+                if (maxNumber == int.MaxValue) continue;
 
                 var firstDivisor = GetFirstDivisor();
                 if (firstDivisor == int.MinValue) break;
+                if (firstDivisor == int.MaxValue) continue;
 
                 var secondDivisor = GetSecondDivisor();
                 if (secondDivisor == int.MinValue) break;
+                if (secondDivisor == int.MaxValue) continue;
 
                 FizzBuzz.PrintAndReturnResult(minNumber, maxNumber, firstDivisor, secondDivisor);
 
@@ -31,15 +35,16 @@ namespace HomeWork1.FbImplementation
         }
 
         private static bool UserWantsToQuit(string readValue) 
-            => (readValue != null && readValue.Equals("q", StringComparison.OrdinalIgnoreCase));
+            => readValue != null && readValue.Equals("q", StringComparison.OrdinalIgnoreCase);
 
         private static int GetNumber(string readValue)
         {
             if (UserWantsToQuit(readValue)) return int.MinValue;
-            if (int.TryParse(readValue, out var divisorFirst)) return divisorFirst;
+            if (int.TryParse(readValue, out int number) 
+                && (number != int.MinValue || number != int.MaxValue)) return number;
 
             Console.WriteLine("You entered invalid number.");
-            return int.MinValue;
+            return int.MaxValue;
         }
 
         private static int GetMinNumber()
