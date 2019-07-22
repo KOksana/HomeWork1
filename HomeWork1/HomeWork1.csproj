@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GuessNumber.cs" />
     <Compile Include="FizzBuzz.cs" />
     <Compile Include="FizzBuzzProcessing.cs" />
     <Compile Include="Program.cs" />
