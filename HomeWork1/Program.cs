@@ -6,8 +6,9 @@ namespace HomeWork1
     {
         static void Main(string[] args)
         {
-            GuessNumber.Processing();
-            FizzBuzzProcessing.PrintFizzBuzzWithParams();
+            ParseLine.ReadAndParse();
+            //GuessNumber.Processing();
+            //FizzBuzzProcessing.PrintFizzBuzzWithParams();
         }
     }
 }

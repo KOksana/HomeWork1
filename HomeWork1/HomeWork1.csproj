@@ -46,6 +46,7 @@
     <Compile Include="GuessNumber.cs" />
     <Compile Include="FizzBuzz.cs" />
     <Compile Include="FizzBuzzProcessing.cs" />
+    <Compile Include="ParseLine.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
