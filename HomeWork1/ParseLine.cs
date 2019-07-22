@@ -72,7 +72,7 @@ namespace HomeWork1
 
                 if (int.TryParse(numberString, out number))
                 {
-                    outputResult = outputResult + $"number: {number}" + System.Environment.NewLine;
+                    outputResult = outputResult + $"number: {number}" + "\n";
                     return line;
                 }
             }
@@ -104,7 +104,7 @@ namespace HomeWork1
 
                 if (flagString.Equals(string.Empty) || bool.TryParse(flagString, out flag))
                 {
-                    outputResult = outputResult + $"flag: {flag}" + System.Environment.NewLine;
+                    outputResult = outputResult + $"flag: {flag}" + "\n";
                     return line;
                 }
             }
@@ -126,7 +126,7 @@ namespace HomeWork1
                     stringValue = line.Substring(0, indexOfLastQuote);
                     line = line.Remove(0, indexOfLastQuote + 1);
 
-                    outputResult = outputResult + $"string: {stringValue}" + System.Environment.NewLine;
+                    outputResult = outputResult + $"string: {stringValue}" + "\n";
                     return line;
                 }
             }
@@ -145,11 +145,11 @@ namespace HomeWork1
                 }
                 if (!outputResult.Contains("flag"))
                 {
-                    outputResult = outputResult + "flag: False" + System.Environment.NewLine;
+                    outputResult = outputResult + "flag: False" + "\n";
                 }
                 if (!outputResult.Contains("string"))
                 {
-                    outputResult = outputResult + "string: was skipped" + System.Environment.NewLine;
+                    outputResult = outputResult + "string: was skipped" + "\n";
                 }
             }
         }
